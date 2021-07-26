@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import logo from '../assets/book.png';
 
 
@@ -19,21 +20,21 @@ const Header = () => {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item">
+            <Link className="navbar-item" to="/">
               Home
-            </a>
+            </Link>
 
-            <a className="navbar-item">
+            <Link className="navbar-item" to="/products">
               Produits
-            </a>
+            </Link>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-primary">
+                <Link className="button is-primary" to="/cart">
                   <strong>Panier</strong>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

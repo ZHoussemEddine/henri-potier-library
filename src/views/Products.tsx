@@ -1,8 +1,12 @@
+import BookList from "../products/BookList";
+import {ProductProvider} from "../products/ProductContext";
 
 const Products = () => {
   
   return (
-    <h1 className="title is-2">Nos produits</h1>
+    <ProductProvider>
+      <BookList></BookList>
+    </ProductProvider>
   );
 };
 

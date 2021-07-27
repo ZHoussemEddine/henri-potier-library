@@ -1,7 +1,10 @@
 import {Link} from 'react-router-dom';
 import logo from '../assets/book.png';
+import {useOrder} from '../order/OrderContext';
 
 const Header = () => {
+  const [stateOrder] = useOrder();
+
   return (
     <header>
       <nav className="navbar is-spaced" role="navigation" aria-label="main navigation">
@@ -25,7 +28,7 @@ const Header = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link className="button is-info badge has-badge-rounded has-badge-danger" data-badge={1} to="/cart">
+                <Link className="button is-info badge has-badge-rounded has-badge-danger" data-badge={stateOrder.count} to="/cart">
                   <span className="icon">
                     <i className="fas fa-shopping-cart"></i>
                   </span>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Book from "./Book";
 import { useProduct } from "./ProductContext";
 
-const BookList: React.FC = () => {
+const BookList = () => {
   const [stateProducts] = useProduct();
 
   const [search, setSearch] = useState("");

@@ -5,7 +5,7 @@ import Products from './views/Products';
 import Cart from './views/Cart';
 import Home from './views/Home';
 
-function App() {
+const App = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="container">

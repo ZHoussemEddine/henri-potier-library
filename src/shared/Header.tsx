@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom';
 import logo from '../assets/book.png';
 
-
 const Header = () => {
   return (
     <header>

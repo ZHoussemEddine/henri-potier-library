@@ -12,7 +12,7 @@ type ProductProviderProps = { children: React.ReactNode };
 const ProductStateContext = createContext<State | undefined>(undefined);
 const ProductDispatchContext = createContext<Dispatch | undefined>(undefined);
 
-function productReducer(state: State, action: ActionDispatch): State {
+const  productReducer = (state: State, action: ActionDispatch): State => {
   switch (action.type) {
     case Action.GET_PRODUCTS: {
       return { ...state, loading: true };
@@ -28,7 +28,7 @@ function productReducer(state: State, action: ActionDispatch): State {
   }
 }
 
-function ProductProvider({ children }: ProductProviderProps) {
+const ProductProvider = ({ children }: ProductProviderProps) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ function ProductProvider({ children }: ProductProviderProps) {
   );
 }
 
-function useProductState() {
+const useProductState = () => {
   const context = useContext(ProductStateContext);
   if (context === undefined) {
     throw new Error("useProductState must be used within a ProductProvider");
@@ -65,7 +65,7 @@ function useProductState() {
   return context;
 }
 
-function useProductDispatch() {
+const useProductDispatch = () => {
   const context = useContext(ProductDispatchContext);
   if (context === undefined) {
     throw new Error("useProductDispatch must be used within a ProductProvider");
@@ -73,7 +73,7 @@ function useProductDispatch() {
   return context;
 }
 
-function useProduct(): [State, Dispatch] {
+const useProduct = (): [State, Dispatch] =>{
   return [useProductState(), useProductDispatch()];
 }
 

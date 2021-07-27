@@ -1,11 +1,20 @@
 import React from "react";
-import { Product } from "./ProductModel";
+import { Action, useOrder } from "../order/OrderContext";
+import {Product} from "./ProductModel";
 
 interface BookProps {
   product: Product;
 }
 
 const Book: React.FC<BookProps> = ({ product }) => {
+  const [, dispatchOrder] = useOrder();
+
+  const addProductHandler = () => 
+    dispatchOrder({
+      type: Action.ADD_TO_ORDER,
+      payload: product
+    });
+
   return (
     <div className="card">
       <div className="card-image">
@@ -21,7 +30,7 @@ const Book: React.FC<BookProps> = ({ product }) => {
               {product.price.toFixed(2)} €
               <button
                 className="button is-info is-pulled-right"
-                onClick={() => {}}
+                onClick={addProductHandler}
               >
                 <span className="icon">
                   <i className="fas fa-cart-arrow-down"></i>

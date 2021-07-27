@@ -25,7 +25,10 @@ const Header = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link className="button is-primary" to="/cart">
+                <Link className="button is-info badge has-badge-rounded has-badge-danger" data-badge={1} to="/cart">
+                  <span className="icon">
+                    <i className="fas fa-shopping-cart"></i>
+                  </span>
                   <strong>Panier</strong>
                 </Link>
               </div>

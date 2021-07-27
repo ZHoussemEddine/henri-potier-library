@@ -1,3 +1,10 @@
 
+@charset "utf-8";
+
 @import "~bulma";
 @import "~bulma-badge";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";

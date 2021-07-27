@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.21.1",
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "bulma": "^0.9.3",
     "bulma-badge": "^3.0.1",
     "react": "^17.0.2",
